@@ -1,0 +1,1 @@
+In the ci building dockerfile crashes on any npm coommand from both node:latest and node:bullseye-slim
