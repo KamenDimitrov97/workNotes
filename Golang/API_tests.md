@@ -1,0 +1,1 @@
+API tests are focused on testing the whole API, specifically all of the endpoints of a web application. The test needs to create a server and make requests to each endopoint to verify.

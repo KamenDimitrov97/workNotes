@@ -1,0 +1,1 @@
+Unit tests are basically tests focused on individual functions and/or packages, to make sure the bugs don't start in separated methods. The goal is to verify the individual components of a system. 
