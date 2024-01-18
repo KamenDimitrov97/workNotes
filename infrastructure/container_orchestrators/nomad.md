@@ -1,0 +1,3 @@
+Nomad is a modern, open-source workload scheduler and cluster manager designed to efficiently deploy and manage containerized and non-containerized applications across a variety of infrastructure environments, including public and private clouds, on-premises data centers, and edge computing nodes.
+
+Infrastructure Nomad refers to the use of Nomad as a tool for managing and orchestrating infrastructure resources, such as servers, storage, and networking components, in addition to application workloads. This allows organizations to create a unified infrastructure management platform that can optimize resource utilization, automate deployment and scaling, and simplify operations across diverse infrastructure environments.
