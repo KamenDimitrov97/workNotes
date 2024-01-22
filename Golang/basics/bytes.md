@@ -1,0 +1,1 @@
+# To check the contents of []bytes just string([]bytes) them
