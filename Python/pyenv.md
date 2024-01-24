@@ -37,8 +37,10 @@ pyenv install 3.8.12
 ```shell
 pyenv virtualenv 3.8.12 <env_name>
 ```
-3. pyenv activate <env_name>
-
+3. To activate 
+```
+pyenv activate <env_name>
+```
 4. To deactivate the env that you're currently in 
 ```shell
 pyenv deactivate
