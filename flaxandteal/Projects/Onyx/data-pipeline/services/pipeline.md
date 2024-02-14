@@ -6,9 +6,10 @@ export ELASTIC_SEARCH_URL=http://localhost:9200
 export KAFKA_ADDR=0.0.0.0:9092,0.0.0.0:9093,0.0.0.0:9094
 export MONGODB_BIND_ADDR=0.0.0.0:27017
 export SERVICE_AUTH_TOKEN=e19e7f47d1ec5347b7e8bb7b8b9e86379269fa82fa0b1cdf87e7b4bf834a2dca
-export ROOT_SEARCH_API=~/dev/github/onyx/dp-search-api # dp-search-api dir if it's not it the same dir as dp-compose
+export ROOT_SEARCH_API=/home/kamen/dev/work/github/onyx/dp-search-api # dp-search-api dir if it's not it the same dir as dp-compose
 export SEARCH_API_URL=http://localhost:23900
 export ZEBEDEE_URL=http://localhost:8082
+export zebedee_root="~/dev/work/github/es-pipeline/es/es-pipeline/zebedee/zebedee-cms"
 ```
 
 # Kafka

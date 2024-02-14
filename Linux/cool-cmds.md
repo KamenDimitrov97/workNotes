@@ -15,3 +15,9 @@ decrypts a strung and returns the result
 ## grep "^PORT=" .env.example | cut -d "=" -f 2 | sed 's/^[[:blank:]]*//;s/[[:blank:]]*$//' 
 
 This finds the value of a specific varialble inside a .env file
+
+## cmd history in percentage 
+
+```sh
+history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
+```
