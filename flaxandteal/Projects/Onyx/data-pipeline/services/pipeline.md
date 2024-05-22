@@ -98,7 +98,7 @@ kubectl exec --tty -i my-release-kafka-client --namespace fat-ony-dev -- bash
 inside the pod I tried this:
 
 ```bash
-kafka-console-producer.sh \
+kafka-console-producer \
     --producer.config /tmp/client.properties \
     --broker-list my-release-kafka-controller-0.my-release-kafka-controller-headless.fat-ony-dev.svc.cluster.local:9092,my-release-kafka-controller-1.my-release-kafka-controller-headless.fat-ony-dev.svc.cluster.local:9092,my-release-kafka-controller-2.my-release-kafka-controller-headless.fat-ony-dev.svc.cluster.local:9092 \
     --topic test
@@ -149,6 +149,8 @@ kafka-console-producer --broker-list 0.0.0.0:19092 --topic search-data-import --
 
 kafka-console-producer --broker-list 0.0.0.0:19092 --topic search-data-import --property value.serializer=io.confluent.kafka.serializers.KafkaAvroSerializer < ton.avro
 
+
+kafka-console-consumer --bootstrap-server 0.0.0.0:19092 --topic search-data-import --from-beginning --property print.key=true
 
 kafka-console-consumer \
   --bootstrap-server <kafka-broker> \

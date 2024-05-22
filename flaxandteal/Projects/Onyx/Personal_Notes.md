@@ -150,3 +150,12 @@ es efficient way of enriching datasets on reindex, that;s a prerequiset do creat
 
 linden needs an intermidieat branch so that the tests run 
 
+
+
+
+uvicorn in category - we already have a more modern async flask setup which requires uvicorn 
+uvicorn is wrapper to gunicorn 
+guunicorn in berlin 
+
+
+weekly feedback 
