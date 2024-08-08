@@ -3,15 +3,15 @@
 
 1. Navigate to the project you wish to install a specific python version in and run:
 ```shell
-pyenv install 3.10
+pyenv install 3.12
 ```
 2. Then run this cmd to create an env which will be stored inside .pyenv/python/version/you/want
 ```shell
-pyenv virtualenv 3.10 cat
+pyenv virtualenv 3.10 marine
 ```
 3. To activate 
 ```sh
-pyenv activate cat
+pyenv activate dewret
 ```
 4. To deactivate the env that you're currently in 
 ```shell
