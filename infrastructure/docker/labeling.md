@@ -1,6 +1,9 @@
 # Adding labels to your docker images
 
-## You can set labels in the Dockerfile itself
+## Setting Labels in Dockerfile
+
+Labels in Dockerfiles provide a way to embed metadata directly into your Docker images. You can add labels using the LABEL instruction in your Dockerfile. Here’s an example:
+
 ```Dockerfile
 # Use an official base image
 FROM ubuntu:latest
@@ -11,20 +14,22 @@ LABEL maintainer="kamen@flaxandteal.co.uk"
 LABEL version="1.0"
 
 # Your Dockerfile instructions
-RUN apt-get update && apt-get install -y \
-    curl \
-    vim
+RUN apt-get update && apt-get install -y 
 
 CMD ["bash"]
 ```
 
-## You can set labels when creating images 
+## Setting Labels When Creating Images
+
+You can also set labels during the image build process using the docker build command. Here’s how you can specify labels:
 
 ```sh
 docker build --label repository=flaxandteal --label maintainer="kamen@flaxandteal.co.uk" --label version="1.0" -t my-image:latest .
 ```
 
 # Checking your image labels
+
+To inspect the labels of an existing image:
 
 ```sh
 docker inspect --format='{{json .Config.Labels}}' my-labeled-image:latest
@@ -34,15 +39,18 @@ docker inspect --format='{{json .Config.Labels}}' my-labeled-image:latest
 
 ## Listing images using a label
 
+Labels can help you organize and filter images.
+
 ```sh
 docker image ls --filter "label=repository=flaxandteal"
 docker image ls --filter "label=maintainer=kamen@flaxandteal.co.uk"
 docker image ls --filter "label=version=1.0"
 ```
 
-##  Deleting images
+## Deleting Images Based on Labels
 
-You can remove all images that appeal to a certain label
+You can remove all images that appeal to a certain label.
+
 ```sh
 docker image prune --filter "label=label_name(repository)=flaxandteal"
 docker image prune --filter "label=version=1.0"
