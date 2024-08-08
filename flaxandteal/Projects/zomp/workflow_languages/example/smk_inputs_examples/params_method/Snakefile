@@ -1,0 +1,31 @@
+rule all:
+    input:
+        "data/processed_data2.txt"
+
+rule process_data:
+    params:
+        data=[1, 2, 3, 4, 5, 6, 7]
+    output:
+        txt="data/processed_data.txt"
+    run:
+        def download_data(params, output):
+            data_list = params.data
+            with open(output[0], 'w') as f:
+                for item in data_list:
+                    f.write(f"{item}\n")
+            
+        download_data(params, output)
+
+rule kamen:
+    input:
+        rules.process_data.output.txt
+    params:
+        data=rules.process_data.params.data
+    output:
+        "data/processed_data2.txt"
+    shell:
+        """
+        echo {params.data} >> {output}
+        echo {params.data} >> {output}
+        echo {params.data} >> {output}
+        """

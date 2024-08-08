@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+download_data        1
+total                2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun  7 11:04:36 2024]
+localrule download_data:
+    output: data/processed_data2.txt
+    jobid: 1
+    reason: Missing output files: data/processed_data2.txt
+    resources: tmpdir=/tmp
+
+[Fri Jun  7 11:04:36 2024]
+Error in rule download_data:
+    jobid: 1
+    output: data/processed_data2.txt
+    shell:
+        
+        cat data/processed_data.txt >> data/processed_data2.txt
+        echo data/processed_data.txt >> data/processed_data2.txt
+        echo data/processed_data.txt >> data/processed_data2.txt
+        echo data/processed_data.txt >> data/processed_data2.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job download_data since they might be corrupted:
+data/processed_data2.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-06-07T110436.907987.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

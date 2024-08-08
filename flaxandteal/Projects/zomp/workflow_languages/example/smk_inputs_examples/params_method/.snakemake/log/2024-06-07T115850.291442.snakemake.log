@@ -1,0 +1,38 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+process_data        1
+total               1
+
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Fri Jun  7 11:58:50 2024]
+localrule process_data:
+    output: data/processed_data.txt
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+General args: ['--force', '--target-files-omit-workdir-adjustment', '--keep-storage-local-copies', '--max-inventory-time 0', '--nocolor', '--notemp', '--no-hooks', '--nolock', '--ignore-incomplete', '', '--verbose ', '--rerun-triggers software-env input mtime code params', '', '', '', '--conda-frontend mamba', '', '', '', '', '', '--shared-fs-usage storage-local-copies source-cache software-deployment input-output persistence sources', '', '--wrapper-prefix https://github.com/snakemake/snakemake-wrappers/raw/', '', '', '', '', '', '', '--latency-wait 5', '--scheduler greedy', '--local-storage-prefix .snakemake/storage', '--scheduler-solver-path /usr/bin', '', '', '', '', '', '--default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI=']
+spawned job: cd /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/smk_inputs_examples/params_method && /usr/bin/python3 -m snakemake --snakefile /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/smk_inputs_examples/params_method/Snakefile --target-jobs 'process_data:' --allowed-rules 'process_data' --cores 1 --attempt 1 --force-use-threads  --force --target-files-omit-workdir-adjustment --keep-storage-local-copies --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --verbose  --rerun-triggers software-env input mtime code params --conda-frontend mamba --shared-fs-usage storage-local-copies source-cache software-deployment input-output persistence sources --wrapper-prefix https://github.com/snakemake/snakemake-wrappers/raw/ --latency-wait 5 --scheduler greedy --local-storage-prefix .snakemake/storage --scheduler-solver-path /usr/bin --default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI= --quiet progress rules --mode subprocess --local-groupid local
+Completion of job ['process_data'] reported to scheduler.
+jobs registered as running before removal {process_data}
+[Fri Jun  7 11:58:50 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-06-07T115850.291442.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

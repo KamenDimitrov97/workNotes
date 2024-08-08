@@ -1,0 +1,45 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count
+------  -------
+all           1
+rule_1        1
+rule_2        1
+total         3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun  7 11:34:18 2024]
+localrule rule_1:
+    output: output_file_1.txt
+    jobid: 2
+    reason: Missing output files: output_file_1.txt
+    resources: tmpdir=/tmp
+
+[Fri Jun  7 11:34:18 2024]
+Finished job 2.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun  7 11:34:18 2024]
+localrule rule_2:
+    input: output_file_1.txt
+    output: output_file.txt
+    jobid: 1
+    reason: Missing output files: output_file.txt; Input files updated by another job: output_file_1.txt
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule rule_2 in file /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/smk_inputs_examples/params_method/Snakefile, line 45:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+output_file.txt (missing locally, parent dir not present)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-06-07T113418.812140.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

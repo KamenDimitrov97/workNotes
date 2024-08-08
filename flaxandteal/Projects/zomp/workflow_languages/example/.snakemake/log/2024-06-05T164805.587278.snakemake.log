@@ -1,0 +1,117 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+align_reads             3
+all                     1
+download_data           3
+generate_summary        3
+trim_reads              3
+total                  13
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed Jun  5 16:48:05 2024]
+localrule download_data:
+    output: results/raw/sample3_R1.fastq.gz, results/raw/sample3_R2.fastq.gz
+    jobid: 12
+    reason: Missing output files: results/raw/sample3_R1.fastq.gz, results/raw/sample3_R2.fastq.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Wed Jun  5 16:48:05 2024]
+localrule download_data:
+    output: results/raw/sample2_R1.fastq.gz, results/raw/sample2_R2.fastq.gz
+    jobid: 8
+    reason: Missing output files: results/raw/sample2_R2.fastq.gz, results/raw/sample2_R1.fastq.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Wed Jun  5 16:48:05 2024]
+localrule download_data:
+    output: results/raw/sample1_R1.fastq.gz, results/raw/sample1_R2.fastq.gz
+    jobid: 4
+    reason: Missing output files: results/raw/sample1_R2.fastq.gz, results/raw/sample1_R1.fastq.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+[Wed Jun  5 16:48:05 2024]
+Finished job 12.
+1 of 13 steps (8%) done
+[Wed Jun  5 16:48:05 2024]
+Finished job 8.
+2 of 13 steps (15%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Jun  5 16:48:05 2024]
+localrule trim_reads:
+    input: results/raw/sample2_R1.fastq.gz, results/raw/sample2_R2.fastq.gz
+    output: results/trimmed/sample2_R1_trimmed.fastq.gz, results/trimmed/sample2_R2_trimmed.fastq.gz
+    jobid: 7
+    reason: Missing output files: results/trimmed/sample2_R1_trimmed.fastq.gz, results/trimmed/sample2_R2_trimmed.fastq.gz; Input files updated by another job: results/raw/sample2_R2.fastq.gz, results/raw/sample2_R1.fastq.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+[Wed Jun  5 16:48:05 2024]
+localrule trim_reads:
+    input: results/raw/sample3_R1.fastq.gz, results/raw/sample3_R2.fastq.gz
+    output: results/trimmed/sample3_R1_trimmed.fastq.gz, results/trimmed/sample3_R2_trimmed.fastq.gz
+    jobid: 11
+    reason: Missing output files: results/trimmed/sample3_R1_trimmed.fastq.gz, results/trimmed/sample3_R2_trimmed.fastq.gz; Input files updated by another job: results/raw/sample3_R1.fastq.gz, results/raw/sample3_R2.fastq.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+[Wed Jun  5 16:48:05 2024]
+Finished job 4.
+3 of 13 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jun  5 16:48:05 2024]
+localrule trim_reads:
+    input: results/raw/sample1_R1.fastq.gz, results/raw/sample1_R2.fastq.gz
+    output: results/trimmed/sample1_R1_trimmed.fastq.gz, results/trimmed/sample1_R2_trimmed.fastq.gz
+    jobid: 3
+    reason: Missing output files: results/trimmed/sample1_R2_trimmed.fastq.gz, results/trimmed/sample1_R1_trimmed.fastq.gz; Input files updated by another job: results/raw/sample1_R2.fastq.gz, results/raw/sample1_R1.fastq.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/Snakefile, line 53:
+Command 'set -euo pipefail;  /usr/bin/python3 /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/.snakemake/scripts/tmp7klnd6lf.trim_reads.py' returned non-zero exit status 1.
+[Wed Jun  5 16:48:05 2024]
+Error in rule trim_reads:
+    jobid: 11
+    input: results/raw/sample3_R1.fastq.gz, results/raw/sample3_R2.fastq.gz
+    output: results/trimmed/sample3_R1_trimmed.fastq.gz, results/trimmed/sample3_R2_trimmed.fastq.gz
+
+RuleException:
+CalledProcessError in file /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/Snakefile, line 53:
+Command 'set -euo pipefail;  /usr/bin/python3 /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/.snakemake/scripts/tmp5b_5gnyy.trim_reads.py' returned non-zero exit status 1.
+[Wed Jun  5 16:48:05 2024]
+Error in rule trim_reads:
+    jobid: 3
+    input: results/raw/sample1_R1.fastq.gz, results/raw/sample1_R2.fastq.gz
+    output: results/trimmed/sample1_R1_trimmed.fastq.gz, results/trimmed/sample1_R2_trimmed.fastq.gz
+
+RuleException:
+CalledProcessError in file /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/Snakefile, line 53:
+Command 'set -euo pipefail;  /usr/bin/python3 /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/.snakemake/scripts/tmpapya0ia3.trim_reads.py' returned non-zero exit status 1.
+[Wed Jun  5 16:48:05 2024]
+Error in rule trim_reads:
+    jobid: 7
+    input: results/raw/sample2_R1.fastq.gz, results/raw/sample2_R2.fastq.gz
+    output: results/trimmed/sample2_R1_trimmed.fastq.gz, results/trimmed/sample2_R2_trimmed.fastq.gz
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-06-05T164805.587278.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule process_data_2d031868813afdbac602c36c3e760d6e in file /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/smk_inputs_examples/Snakefile, line 2:
+Missing input files for rule process_data_2d031868813afdbac602c36c3e760d6e:
+    output: data/processed_data.txt
+    affected files:
+        data/raw_data.txt

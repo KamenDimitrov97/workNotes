@@ -1,6 +1,6 @@
 # Intro
 
-Dewret allows certain workflows written in a dynamic style to be rendered to a static representation.
+Dewret allows workflows, written in a dynamic style, to be rendered to a static representation.
 
 git-versionable workflows: while code can be versioned, the changes of a dynamic workflow do not necessarily clearly correspond to changes in the executed workflow. This maintains a precise trackable history.
 plan and play: the workflow can be rapidly iterated, analysed and optimized before it is sent for real execution on expensive or restricted HPC hardware.

@@ -1,0 +1,3 @@
+samples: "data/samples.txt"
+output_dir: "results"
+genome_index: "genome/genome_index"

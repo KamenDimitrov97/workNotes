@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /home/kamen/notes/workNotes/flaxandteal/Projects/zomp/workflow_languages/example/smk_inputs_examples/params_method/Snakefile, line 1:
+Missing input files for rule all:
+    affected files:
+        data/processed_data2.txt

@@ -1,0 +1,69 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job kamen
+    wildcards: 
+candidate job process_data
+    wildcards: 
+selected job process_data
+    wildcards: 
+selected job kamen
+    wildcards: 
+selected job all
+    wildcards: 
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+all          1
+kamen        1
+total        2
+
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Fri Jun  7 13:10:31 2024]
+localrule kamen:
+    input: data/processed_data.txt
+    output: data/processed_data2.txt
+    jobid: 1
+    reason: Set of input files has changed since last execution; Params have changed since last execution
+    resources: tmpdir=/tmp
+
+Completion of job ['kamen'] reported to scheduler.
+jobs registered as running before removal {kamen}
+[Fri Jun  7 13:10:31 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Fri Jun  7 13:10:31 2024]
+localrule all:
+    input: data/processed_data2.txt
+    jobid: 0
+    reason: Input files updated by another job: data/processed_data2.txt
+    resources: tmpdir=/tmp
+
+Completion of job ['all'] reported to scheduler.
+jobs registered as running before removal {all}
+[Fri Jun  7 13:10:31 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-06-07T131031.938041.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

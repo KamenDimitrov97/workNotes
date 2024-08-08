@@ -1,0 +1,78 @@
+import os
+import yaml
+
+# Load the config file
+config = yaml.safe_load(open("config.yaml"))
+
+# Extract parameters from config file
+samples = [line.strip() for line in open(config['samples'])]
+
+# Define global variables
+output_dir = config['output_dir']
+genome_index = config['genome_index']
+
+# Define all rule
+rule all:
+    input:
+        expand(f"{output_dir}/summary/{{sample}}.txt", sample=samples)
+
+# Rule to download data
+rule download_data:
+    output:
+        fastq1 = f"{output_dir}/raw/{{sample}}_R1.fastq.gz",
+        fastq2 = f"{output_dir}/raw/{{sample}}_R2.fastq.gz"
+    shell:
+        """
+        # Example command to download data (here using echo to simulate)
+        echo "Downloading {wildcards.sample} R1" > {output.fastq1}
+        echo "Downloading {wildcards.sample} R2" > {output.fastq2}
+        """
+
+# Rule to perform quality control
+rule quality_control:
+    input:
+        fastq1 = f"{output_dir}/raw/{{sample}}_R1.fastq.gz",
+        fastq2 = f"{output_dir}/raw/{{sample}}_R2.fastq.gz"
+    output:
+        report = f"{output_dir}/qc/{{sample}}_qc_report.txt"
+    params:
+        sample = "{sample}"
+    script:
+        "scripts/quality_control.py"
+
+# Rule to trim reads
+rule trim_reads:
+    input:
+        fastq1 = f"{output_dir}/raw/{{sample}}_R1.fastq.gz",
+        fastq2 = f"{output_dir}/raw/{{sample}}_R2.fastq.gz"
+    output:
+        trimmed1 = f"{output_dir}/trimmed/{{sample}}_R1_trimmed.fastq.gz",
+        trimmed2 = f"{output_dir}/trimmed/{{sample}}_R2_trimmed.fastq.gz"
+    params:
+        sample = "{sample}"
+    script:
+        "scripts/trim_reads.py"
+
+# Rule to align reads
+rule align_reads:
+    input:
+        trimmed1 = f"{output_dir}/trimmed/{{sample}}_R1_trimmed.fastq.gz",
+        trimmed2 = f"{output_dir}/trimmed/{{sample}}_R2_trimmed.fastq.gz"
+    output:
+        bam = f"{output_dir}/aligned/{{sample}}.bam"
+    shell:
+        """
+        # Simulating alignment using echo (replace with actual alignment command)
+        echo "Aligning {wildcards.sample}" > {output.bam}
+        """
+
+# Rule to generate summary
+rule generate_summary:
+    input:
+        bam = f"{output_dir}/aligned/{{sample}}.bam"
+    output:
+        summary = f"{output_dir}/summary/{{sample}}.txt"
+    params:
+        sample = "{sample}"
+    script:
+        "scripts/generate_summary.py"
