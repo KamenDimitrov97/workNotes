@@ -9,3 +9,9 @@ monolith
 gcloud container clusters get-credentials matilda-1 --region europe-west1 --project everything-219816
 
 matilda
+
+# Replace knative.example.com with your domain suffix
+kubectl patch configmap/config-domain \
+  --namespace knative-serving \
+  --type merge \
+  --patch '{"data":{"mrn":""}}'
