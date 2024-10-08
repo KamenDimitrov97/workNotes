@@ -1,0 +1,5 @@
+- [ ] Talk to Phil about karpenter 
+- [ ] Make a POC recommendation to Phil 
+- [ ] Sharon suggested working on a designated cluster for testing purposes
+- [ ] I suggested matilda or monolith whichever is not used currently
+- [ ] Notes on karpenter.sh

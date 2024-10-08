@@ -11,7 +11,7 @@ with open('input.csv', newline='') as csvfile:
     i = 1
     for row in spamreader:
         urlONS = 'http://localhost:23900/search?q=' + row[0]
-        urlNLP = 'http://localhost:23900/search?q=' + row[0] + '&c=1'
+        urlNLP = 'http://localhost:23900/search?q=' + row[0] + '&nlp_weighting=true'
 
         print("This is the url for ONS" + urlONS)
         rONS = requests.get(urlONS)
