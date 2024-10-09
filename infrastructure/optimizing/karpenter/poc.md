@@ -47,8 +47,8 @@ Tweak Karpenter settings (e.g., spot usage, instance types) and observe the resp
 
 
 ### Question: 
-Q: Access rights: I'll definitely need someone with access rights for certain situations.
-Q: Should we implement a monitoring tool like Grafana/Prometheus to monitor.
-Q: Chaos engineering? Maybe? Yes?
-Q: What concerns would you give trying this on our development cluster once setup and testing pass? 
+- Q: Access rights: I'll definitely need someone with access rights for certain situations.
+- Q: Should we implement a monitoring tool like Grafana/Prometheus to monitor.
+- Q: Chaos engineering? Maybe? Yes?
+- Q: What concerns would you give trying this on our development cluster once setup and testing pass? 
 
