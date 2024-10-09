@@ -7,6 +7,7 @@ What we are doing is:
 - Ongoing support
 - Knowledge transfer and training
 - Ticket fixes
+- vue.js, typescript component support
 - Deployment support, including Docker, CI/CD, and related tools.
 
 ### Technical Details:
@@ -99,16 +100,26 @@ npm unlink winform-build-version aubergine-winform-build-version
 npm ls
 ```
 
-### Recommended vscode EXTs by Will:
-- Vue Official Extensions
-- Prettier for TypeScript
-- GitLens
-- ESLint
-- YAML
-- Peacock
-
 ### Tasks:
 
-- [ ] Set up the Aubergine version while waiting for access rights.
-- [ ] Having a working environment running.
+- [x] Set up the Aubergine version while waiting for access rights.
+- [x] Having a working environment running.
 - [x] Ask Phil for credentials to access ASM.
+
+
+
+
+
+# NEW
+
+subdomain
+agencysectormanagement@vs-ssh.visualstudio.com:v3/agencysectormanagement/ASM%20Cloud/ASM.Helios.Website.Aeos
+long day of sprint planning on monday 
+11am BST everyday standup meeting
+underpromise overdeliver
+Jimmy lead programmer 
+set VPN up with 
+
+pat - https://agencysectormanagement.visualstudio.com/_usersSettings/tokens
+repos - https://agencysectormanagement.visualstudio.com/ASM%20Cloud/_git/ASM.Helios.Website.Aeos
+asm wiki - https://wiki.asm.org.uk/development-team/software-developer-wiki/AEOS/npm-packages
